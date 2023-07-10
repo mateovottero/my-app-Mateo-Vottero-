@@ -1,0 +1,14 @@
+.content{
+    border: 2px solid black;
+    background-repeat: no-repeat;
+    background-size:cover;
+    text-align: center;
+    color: rgb(204, 63, 39)
+}
+.h1{
+    font-size: 2.4em;
+    margin-top: 1em;
+}
+.h2{
+    margin: 1em;
+}

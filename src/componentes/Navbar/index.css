@@ -1,0 +1,11 @@
+.container{
+    display:flex;
+    justify-content:space-between ;
+    border: 1px solid black;
+    padding: 1%;
+    background-color: black;
+}
+.buttons{
+    display: flex;
+    justify-content: flex-start;
+}
