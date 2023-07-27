@@ -1,14 +1,23 @@
-import "./index.css"
-import ItemCount from "../ItemCount"
+import React, { useEffect, useState } from 'react';
+import ItemList from '../ItemList/index';
+import { getProducts } from '../../mock/data';
+const ItemListContainer = ({ greeting }) => {
+  const [listaProductos, setListaProductos] = useState([]);
 
-function ListContainer (props) {
-    return(
-        <div className="content">
+  useEffect(() => {
+    getProducts()
+      .then((res) => setListaProductos(res))
+      .catch((error) => console.log(error));
+  }, []);
 
-        <h1 className="h1">{props.title}</h1>
-        <h2 className="h2">{props.subTitle}</h2>
-        {/* <ItemCount otrotitulo={otrotitulo} ValorInicial={0} stock={9}/> */}
-        </div>
-    )
-}
-export default ListContainer
+  return (
+    <div>
+      <h2>{greeting}</h2>
+      <ItemList listaProductos={listaProductos} />
+    </div>
+  );
+};
+
+export default ItemListContainer;
+
+

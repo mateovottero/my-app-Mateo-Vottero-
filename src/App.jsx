@@ -1,19 +1,18 @@
-import Navbar from './componentes/Navbar';
-import ListContainer from './componentes/ItemListContainer';
-import ItemCount from './componentes/ItemListContainer';
-
-function App() {
-
-  return <>
-  <Navbar/>;
-  <ListContainer
-    title="bienvenido a calculo a Mendoza Gaming"
-    subTitle="No te dejes ganar por culpa de accesorios"
-  />
-  {/* <ItemCount otrotitulo={otrotitulo} ValorInicial={0} stock={9}/> */}
-  </>
-
-
+import React from 'react';
+import './app.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './componentes/Navbar/index';
+import Home from './pages/Home/Home';
+import Detail from './pages/Detail/Detail';
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category/:categoryId" element={<p>hola soy otro</p>} />
+        <Route path="/item/:id" element={<Detail />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
